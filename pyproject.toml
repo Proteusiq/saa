@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "saa"
+version = "0.0.1"
+description = "Converting time into natural language phrases"
+authors = ["Prayson W. Daniel <praysonpi@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.8"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
+pytest = "^7.3.1"
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
