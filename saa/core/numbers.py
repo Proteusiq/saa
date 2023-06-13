@@ -6,10 +6,9 @@ class Converter:
         return self.convert(number)
 
     def convert(self, number):
-
         readable_numbers = self.language.numbers
         translations_and = self.language.number_connector
-        
+
         if number in readable_numbers:
             return readable_numbers[number]
         else:

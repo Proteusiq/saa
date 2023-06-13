@@ -1,23 +1,19 @@
 from saa.core.numbers import Converter
 
 
-
-
 class TimeLogic:
     def __init__(self, language):
-
         self.language = language
 
     def __call__(self, hour, minute):
         return self.convert(hour, minute)
 
     def convert(self, hour, minute):
-
         time_logic = self.language.time_logic
         time = self.language.time
-        
+
         if minute in time:
-            hour, _* = time_logic(hour, minute)
+            hour, *_ = time_logic(hour, minute)
             return time[minute].format(hour=hour)
         else:
             hour, minute, is_to = time_logic(hour, minute)
@@ -33,12 +29,11 @@ class Clock:
         self.converter = Converter(language)
 
     def read(self, raw=False):
- 
         if raw:
             return f"{self.converter(self.hour)} {self.converter(self.minute)}"
 
         t = TimeLogic(self.language)(self.hour, self.minute)
-        
+
         print(t)
 
     def __repr__(self):
@@ -47,7 +42,6 @@ class Clock:
 
 
 if __name__ == "__main__":
-
     from saa.luga import English, Danish
     from datetime import datetime
 
@@ -60,7 +54,6 @@ if __name__ == "__main__":
 
     saa = Clock(time=now, language=English)
     print(saa.read(raw=False))
-
 
     # say = Converter(language=Danish)
     # print(say(NUMBER))

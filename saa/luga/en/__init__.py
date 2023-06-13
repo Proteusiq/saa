@@ -43,15 +43,13 @@ class English(Luga):
 
     @staticmethod
     def time_logic(hour, minute) -> tuple[int, int, str]:
-      
-      
-      is_to = "to" if minute > 30 else "past"
+        is_to = "to" if minute > 30 else "past"
 
-      if hour > 12:
-          hour = hour - 12
-            
-      if is_to == "to":
-          hour += 1
-          minute = 60 - minute
-      
-      return hour, minute, is_to 
+        if hour > 12:
+            hour = hour - 12
+
+        if is_to == "to":
+            hour += 1
+            minute = 60 - minute
+
+        return hour, minute, is_to

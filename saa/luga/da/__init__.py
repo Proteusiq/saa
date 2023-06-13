@@ -40,7 +40,3 @@ class Danish:
         40: "fyrre",
         50: "halvtreds",
     }
-
-  
-
-
