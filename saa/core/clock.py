@@ -42,7 +42,7 @@ class Clock:
 
 
 if __name__ == "__main__":
-    from saa.luga import English, Danish
+    from saa.luga import English
     from datetime import datetime
 
     NUMBER = 59
