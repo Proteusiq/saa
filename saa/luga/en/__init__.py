@@ -8,8 +8,8 @@ class English(Luga):
         "to": "{minute} minutes to {hour}",
         "past": "{minute} minutes past {hour}",
         0: "{hour} o'clock",
-        15: "quorter past {hour}",
-        45: "quorter to {hour}",
+        15: "quarter past {hour}",
+        45: "quarter to {hour}",
         30: "half past {hour}",
     }
     number_connector = "and"
