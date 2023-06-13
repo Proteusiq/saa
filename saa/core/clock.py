@@ -17,7 +17,8 @@ class TimeLogic:
         time = self.language.time
         
         if minute in time:
-            return time[minute].format(minute=minute)
+            hour, _* = time_logic(hour, minute)
+            return time[minute].format(hour=hour)
         else:
             hour, minute, is_to = time_logic(hour, minute)
 
