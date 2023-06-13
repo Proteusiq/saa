@@ -1,24 +1,5 @@
 from saa.core.numbers import Converter
-
-
-class TimeLogic:
-    def __init__(self, language):
-        self.language = language
-
-    def __call__(self, hour, minute):
-        return self.convert(hour, minute)
-
-    def convert(self, hour, minute):
-        time_logic = self.language.time_logic
-        time = self.language.time
-
-        if minute in time:
-            hour, *_ = time_logic(hour, minute)
-            return time[minute].format(hour=hour)
-        else:
-            hour, minute, is_to = time_logic(hour, minute)
-
-            return time[is_to].format(hour=hour, minute=minute)
+from saa.core.template import TemplateLogic
 
 
 class Clock:
@@ -32,9 +13,10 @@ class Clock:
         if raw:
             return f"{self.converter(self.hour)} {self.converter(self.minute)}"
 
-        t = TimeLogic(self.language)(self.hour, self.minute)
+        hour, minute, read_template = TemplateLogic(self.language)(self.hour, self.minute)
 
-        print(t)
+        
+        return read_template.format(hour=self.converter(hour), minute=self.converter(minute),)
 
     def __repr__(self):
         g = self._task(raw=False)
@@ -45,9 +27,6 @@ if __name__ == "__main__":
     from saa.luga import English
     from datetime import datetime
 
-    NUMBER = 59
-    say = Converter(language=English)
-    print(say(NUMBER))
 
     now = datetime.now().time()
     print(f"It is {now}")
