@@ -9,7 +9,7 @@ class Danish:
         0: "klokken {hour}",
         15: "kvart over {hour}",
         45: "kvart i {hour}",
-        30: "halv {hour}",
+        30: "halv{hour}",
     }
 
     number_connector = "og"
@@ -40,3 +40,16 @@ class Danish:
         40: "fyrre",
         50: "halvtreds",
     }
+
+    @staticmethod
+    def time_logic(hour, minute) -> tuple[int, int, str]:
+        is_to = "to" if minute >= 30 else "past"
+
+        if hour > 12:
+            hour = hour - 12
+
+        if is_to == "to":
+            hour += 1
+            minute = 60 - minute
+
+        return hour, minute, is_to
