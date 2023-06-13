@@ -23,16 +23,3 @@ class Converter:
                     readable_numbers[ones_digit],
                 ]
             )
-
-
-
-if __name__ == "__main__":
-
-    from saa.luga import English, Danish
-
-    NUMBER = 59
-    say = Converter(language=English)
-    print(say(NUMBER))
-
-    say = Converter(language=Danish)
-    print(say(NUMBER))
