@@ -6,6 +6,7 @@ test_cases = [
     (45, English, "forty five"),
     (25, Danish, "femogtyve"),
     (13, English, "thirteen"),
+    (14, Danish, "fjorten"),
 ]
 
 
