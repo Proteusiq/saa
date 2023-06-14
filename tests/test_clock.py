@@ -10,7 +10,7 @@ test_cases = [
     (time(hour=13,minute=15), English, "quarter past one"),
     (time(hour=13,minute=30), English, "half past one"),
     (time(hour=13,minute=30), Danish, "halvto"),
-    (time(hour=13,minute=15), Danish, "kvart over en"),
+    (time(hour=13,minute=15), Danish, "kvart over et"),
     (time(hour=13,minute=45), Danish, "kvart i to"),
     
 ]
