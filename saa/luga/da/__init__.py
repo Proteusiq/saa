@@ -54,3 +54,8 @@ class Danish:
             minute = 60 - minute
 
         return hour, minute, is_to, is_minutes
+    
+    @staticmethod
+    def post_logic(text):
+        text = " ".join('et' if word == 'en' else word.replace('en', 'et') for word in text.split() if 'enog' not in word)
+        return text
