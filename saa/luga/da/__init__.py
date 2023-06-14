@@ -4,8 +4,8 @@ from dataclasses import dataclass
 @dataclass
 class Danish:
     time = {
-        "to": "{minute} minutter i {hour}",
-        "past": "{minute} minutter over {hour}",
+        "to": "{minute} is_minutes i {hour}",
+        "past": "{minute} is_minutes over {hour}",
         0: "klokken {hour}",
         15: "kvart over {hour}",
         45: "kvart i {hour}",
@@ -42,8 +42,9 @@ class Danish:
     }
 
     @staticmethod
-    def time_logic(hour, minute) -> tuple[int, int, str]:
+    def time_logic(hour, minute) -> tuple[int, int, str, str]:
         is_to = "to" if minute >= 30 else "past"
+        is_minutes = "minutter" if minute > 1 else "minut"
 
         if hour > 12:
             hour = hour - 12
@@ -52,4 +53,4 @@ class Danish:
             hour += 1
             minute = 60 - minute
 
-        return hour, minute, is_to
+        return hour, minute, is_to, is_minutes
