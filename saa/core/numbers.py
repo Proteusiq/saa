@@ -6,6 +6,8 @@ class Converter:
         return self.convert(number)
 
     def convert(self, number):
+        if not -1 < number < 60:
+            raise ValueError(f"{number} is outside the clock's range number `0-59`")
         readable_numbers = self.language.numbers
         translations_and = self.language.number_connector
 
