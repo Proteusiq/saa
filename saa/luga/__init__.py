@@ -3,4 +3,4 @@ from saa.luga.en import English
 from saa.luga.da import Danish
 
 
-__all__ = ["English", "Danish", "Luga"]
+__all__ = ("English", "Danish", "Luga")
