@@ -10,9 +10,9 @@ readme = "README.md"
 python = ">3.8"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "*"
 pytest = "^7.3.1"
 black = "^23.3.0"
+ruff = "^0.0.272"
 
 [build-system]
 requires = ["poetry-core"]

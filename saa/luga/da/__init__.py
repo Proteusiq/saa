@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from saa.core.language import Luga
 
+
 @dataclass
 class Danish(Luga):
     time = {
@@ -63,6 +64,7 @@ class Danish(Luga):
             if "enog" not in word
         )
         return text
+
 
 class Language(Danish):
     pass

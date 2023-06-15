@@ -59,5 +59,6 @@ class English(Luga):
     def post_logic(text: str) -> str:
         return text
 
+
 class Language(English):
     pass
