@@ -14,9 +14,7 @@ class Clock:
         if raw:
             return f"{self.converter(hour)} {self.converter(minute)}"
 
-        hour, minute, read_template = TemplateLogic(self.language)(
-            hour, minute
-        )
+        hour, minute, read_template = TemplateLogic(self.language)(hour, minute)
 
         return self.language.post_logic(
             read_template.format(
