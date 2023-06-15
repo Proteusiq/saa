@@ -42,7 +42,7 @@ class English(Luga):
     }
 
     @staticmethod
-    def time_logic(hour, minute) -> tuple[int, int, str]:
+    def time_logic(hour, minute) -> tuple[int, int, str, str]:
         is_to = "to" if minute > 30 else "past"
         is_minutes = "minutes" if minute > 1 else "minute"
 
