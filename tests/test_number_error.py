@@ -1,7 +1,9 @@
 import pytest
+from saa.core.numbers import Converter
+from saa.core.plugins import supported_languages
 
-from saa.luga import Danish, English
-from saa.core import Converter
+English = supported_languages.get("en")
+Danish = supported_languages.get("da")
 
 test_cases = [
     (-1, Danish, ValueError),

@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-
+from saa.core.language import Luga
 
 @dataclass
-class Danish:
+class Danish(Luga):
     time = {
         "to": "{minute} is_minutes i {hour}",
         "past": "{minute} is_minutes over {hour}",
@@ -63,3 +63,6 @@ class Danish:
             if "enog" not in word
         )
         return text
+
+class Language(Danish):
+    pass

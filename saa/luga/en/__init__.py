@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from saa.luga import Luga
+from saa.core.language import Luga
 
 
 @dataclass
@@ -58,3 +58,6 @@ class English(Luga):
     @staticmethod
     def post_logic(text: str) -> str:
         return text
+
+class Language(English):
+    pass

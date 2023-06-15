@@ -1,6 +1,8 @@
 import pytest
-from saa.luga import Danish
-from saa.core import Converter
+from saa.core.numbers import Converter
+from saa.core.plugins import supported_languages
+
+Danish = supported_languages.get("da")
 
 test_cases = [
     (25, Danish, "femogtyve"),

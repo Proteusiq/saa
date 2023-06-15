@@ -27,3 +27,6 @@ class Luga(ABC):
     @abstractmethod
     def post_logic(text: str) -> str:
         pass
+
+class Language(Luga):
+    """All language needs to be alias as Language"""

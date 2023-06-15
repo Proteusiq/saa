@@ -1,8 +1,9 @@
 from datetime import time
 import pytest
-from saa.luga import Danish
-from saa.core import Clock
+from saa.core.clock import Clock
+from saa.core.plugins import supported_languages
 
+Danish = supported_languages.get("da")
 
 test_cases = [
     (time(hour=13, minute=30), Danish, "halvto"),

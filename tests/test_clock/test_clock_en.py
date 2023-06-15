@@ -1,8 +1,9 @@
 from datetime import time
 import pytest
-from saa.luga import English
-from saa.core import Clock
+from saa.core.clock import Clock
+from saa.core.plugins import supported_languages
 
+English = supported_languages.get("en")
 
 test_cases = [
     (time(hour=13, minute=45), English, "quarter to two"),

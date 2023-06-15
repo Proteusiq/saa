@@ -1,7 +1,8 @@
 import pytest
-from saa.luga import English
-from saa.core import Converter
+from saa.core.numbers import Converter
+from saa.core.plugins import supported_languages
 
+English = supported_languages.get("en")
 test_cases = [
     (45, English, "forty five"),
     (13, English, "thirteen"),
