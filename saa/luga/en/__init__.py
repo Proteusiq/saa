@@ -54,7 +54,7 @@ class English(Luga):
             minute = 60 - minute
 
         return hour, minute, is_to, is_minutes
-    
+
     @staticmethod
-    def post_logic(text:str) ->str:
+    def post_logic(text: str) -> str:
         return text
