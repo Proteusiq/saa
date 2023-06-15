@@ -3,24 +3,27 @@ from saa.core.template import TemplateLogic
 
 
 class Clock:
-    def __init__(self, time, language):
-        self.hour = time.hour
-        self.minute = time.minute
+    def __init__(self, language):
         self.language = language
         self.converter = Converter(language)
 
-    def read(self, raw=False):
+    def __call__(self, time):
+        return self.convert(hour=time.hour, minute=time.minute)
+
+    def convert(self, hour, minute, raw=False):
         if raw:
-            return f"{self.converter(self.hour)} {self.converter(self.minute)}"
+            return f"{self.converter(hour)} {self.converter(minute)}"
 
-        hour, minute, read_template = TemplateLogic(self.language)(self.hour, self.minute)
+        hour, minute, read_template = TemplateLogic(self.language)(
+            hour, minute
+        )
 
-        
-        return self.language.post_logic(read_template.format(hour=self.converter(hour), minute=self.converter(minute),))
+        return self.language.post_logic(
+            read_template.format(
+                hour=self.converter(hour),
+                minute=self.converter(minute),
+            )
+        )
 
     def __repr__(self):
-
-        raw_time = self._task(raw=True)
-        return raw_time
-
-
+        return self.convert(raw=True)
