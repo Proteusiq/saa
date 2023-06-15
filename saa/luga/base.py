@@ -23,7 +23,7 @@ class Luga(ABC):
     @abstractmethod
     def time_logic(self):
         pass
-    
+
     @abstractmethod
     def post_logic(text: str) -> str:
         pass
