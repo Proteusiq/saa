@@ -13,9 +13,9 @@ from saa import Clock
 clock = Clock("en")
 clock("11:15") # 'quarter past eleven'
 
-klok = Clock("da")
+ur = Clock("da")
 t = time(hour=7, minute=30)
-klok(t) # 'halvotte'
+ur(t) # 'halvotte'
 ```
 
 ## Features
