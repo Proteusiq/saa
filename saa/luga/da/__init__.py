@@ -47,7 +47,6 @@ class Danish(Luga):
         is_to = "to" if minute >= 30 else "past"
         is_minutes = "minutter" if minute > 1 else "minut"
 
-    
         if is_to == "to":
             hour += 1
             minute = 60 - minute

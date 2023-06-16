@@ -46,7 +46,6 @@ class English(Luga):
         is_to = "to" if minute > 30 else "past"
         is_minutes = "minutes" if minute > 1 else "minute"
 
-
         if is_to == "to":
             hour += 1
             minute = 60 - minute
