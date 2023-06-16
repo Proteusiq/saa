@@ -9,6 +9,8 @@ test_cases = [
     (time(hour=13, minute=30), Danish, "halvto"),
     (time(hour=13, minute=15), Danish, "kvart over et"),
     (time(hour=13, minute=45), Danish, "kvart i to"),
+    (time(hour=12, minute=45), Danish, "kvart i et"),
+    (time(hour=13, minute=0), Danish, "klokken et"),
 ]
 
 
