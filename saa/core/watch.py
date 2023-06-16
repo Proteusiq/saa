@@ -16,6 +16,9 @@ class Watch:
 
         hour, minute, read_template = TemplateLogic(self.language)(hour, minute)
 
+        if hour > 12:
+            hour = hour - 12
+
         return self.language.post_logic(
             read_template.format(
                 hour=self.converter(hour),
