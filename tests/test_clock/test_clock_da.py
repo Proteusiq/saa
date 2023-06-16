@@ -11,6 +11,7 @@ test_cases = [
     (time(hour=13, minute=45), Danish, "kvart i to"),
     (time(hour=12, minute=45), Danish, "kvart i et"),
     (time(hour=13, minute=0), Danish, "klokken et"),
+    (time(hour=13, minute=13), Danish, "tretten minutter over et"),
 ]
 
 
