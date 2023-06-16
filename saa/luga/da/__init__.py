@@ -47,9 +47,7 @@ class Danish(Luga):
         is_to = "to" if minute >= 30 else "past"
         is_minutes = "minutter" if minute > 1 else "minut"
 
-        if hour > 12:
-            hour = hour - 12
-
+    
         if is_to == "to":
             hour += 1
             minute = 60 - minute
@@ -59,7 +57,9 @@ class Danish(Luga):
     @staticmethod
     def post_logic(text):
         text = " ".join(
-            word if ("enog" in word or "kken" in word) else word.replace("en", "et")
+            word.replace("en", "et")
+            if (word.startswith("halv") or word == "en")
+            else word
             for word in text.split()
         )
         return text
