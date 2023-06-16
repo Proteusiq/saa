@@ -61,7 +61,7 @@ class Danish(Luga):
         text = " ".join(
             "et" if word == "en" else word.replace("en", "et")
             for word in text.split()
-            if "enog" not in word
+            if ("enog" not in word or "kken" not in word)
         )
         return text
 
