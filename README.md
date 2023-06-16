@@ -1,10 +1,21 @@
 # Saa
 Translating time into human-friendly spoken expressions
 
-![Saa Package](watch.png)
+![Saa OpenJourny](watch.png)
 
 **Saa** allows you to effortlessly translate time into human-friendly spoken expressions. The word `saa` means `hour` in Swahili, and this package aims to humanify time expression across languages. It is build using pure Python standard libraries. 
 
+```python
+from datetime import time
+from saa import Clock
+
+clock = Clock("en")
+clock("11:15") # 'quarter past eleven'
+
+klok = Clock("da")
+t = time(hour=7, minute=30)
+klok(t) # 'halvotte'
+```
 
 ## Features
 
