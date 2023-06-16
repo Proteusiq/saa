@@ -59,9 +59,8 @@ class Danish(Luga):
     @staticmethod
     def post_logic(text):
         text = " ".join(
-            "et" if word == "en" else word.replace("en", "et")
+            word if ("enog" in word or "kken" in word) else word.replace("en", "et")
             for word in text.split()
-            if ("enog" not in word or "kken" not in word)
         )
         return text
 
