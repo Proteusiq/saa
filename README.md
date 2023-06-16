@@ -1,5 +1,5 @@
 # Saa
-> Making Time Speak! 🎙️
+> _Making Time Speak!_ 🎙️
 Translating time into human-friendly spoken expressions
 
 ![Saa OpenJourny](watch.png)
