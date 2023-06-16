@@ -1,14 +1,14 @@
 from datetime import time, datetime
 from functools import singledispatchmethod
 from typing import Union
-from saa.core.clock import Clock
+from saa.core.watch import Watch
 from saa.core.plugins import supported_languages
 
 SUPPORTED_LANGUAGES = [luga for luga in supported_languages.keys()]
 TimeType = Union[str, time, datetime]
 
 
-class Watch:
+class Clock:
     def __init__(self, language: str):
         if language not in SUPPORTED_LANGUAGES:
             raise ValueError(f"{language} not yet supported")
@@ -32,9 +32,9 @@ class Watch:
         return time
 
     def convert(self, time: TimeType) -> str:
-        clock = Clock(self.language)
+        watch = Watch(self.language)
         time = self.inputs(time)
-        return clock(time)
+        return watch(time)
 
     def __call__(self, time: TimeType) -> str:
         return self.convert(time)

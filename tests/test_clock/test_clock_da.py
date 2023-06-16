@@ -1,6 +1,6 @@
 from datetime import time
 import pytest
-from saa.core.clock import Clock
+from saa.core.watch import Watch
 from saa.core.plugins import supported_languages
 
 Danish = supported_languages.get("da")
@@ -14,7 +14,7 @@ test_cases = [
 
 @pytest.mark.parametrize("test_input, language, test_output", test_cases)
 def test_clocks(test_input, language, test_output):
-    clock = Clock(language=language)
+    clock = Watch(language=language)
     assert test_output == clock(test_input)
 
 
@@ -37,5 +37,5 @@ test_plural_cases = [
 
 @pytest.mark.parametrize("test_input, language, test_output", test_cases)
 def test_cases(test_input, language, test_output):
-    clock = Clock(language=language)
+    clock = Watch(language=language)
     assert test_output == clock(test_input)

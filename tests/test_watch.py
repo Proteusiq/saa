@@ -1,6 +1,6 @@
 from datetime import time, datetime
 import pytest
-from saa import Watch
+from saa import Clock
 
 test_cases = [
     (time(hour=13, minute=30), "da", "halvto"),
@@ -13,5 +13,5 @@ test_cases = [
 
 @pytest.mark.parametrize("test_input, language, test_output", test_cases)
 def test_watches(test_input, language, test_output):
-    clock = Watch(language=language)
+    clock = Clock(language=language)
     assert test_output == clock(test_input)

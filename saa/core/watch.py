@@ -2,7 +2,7 @@ from saa.core.numbers import Converter
 from saa.core.template import TemplateLogic
 
 
-class Clock:
+class Watch:
     def __init__(self, language):
         self.language = language
         self.converter = Converter(language)

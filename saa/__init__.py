@@ -1,3 +1,3 @@
-from saa.watch import Watch
+from saa.clock import Clock
 
-__all__ = ("Watch",)
+__all__ = ("Clock",)
