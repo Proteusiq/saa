@@ -5,23 +5,23 @@ from dataclasses import dataclass
 @dataclass
 class Luga(ABC):
     @abstractproperty
-    def time(self):
+    def time(self) -> dict:
         pass
 
     @abstractproperty
-    def number_connector(self):
+    def number_connector(self) -> str:
         pass
 
     @abstractproperty
-    def connect_format(self):
+    def connect_format(self) -> str:
         pass
 
     @abstractproperty
-    def numbers(self):
+    def numbers(self) -> dict[int, str]:
         pass
 
     @abstractmethod
-    def time_logic(self):
+    def time_logic(self) -> tuple[int, int, str, str]:
         pass
 
     @abstractmethod
