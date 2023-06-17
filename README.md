@@ -70,8 +70,8 @@ Coming ...
 
 One of the key strengths of **Saa** is its extensible architecture, allowing you to easily add support for additional languages. To add a new language, follow these steps:
 
-1. Create a new directory under the `saa/lagu` directory, using the ISO 639-1 language code as the filename (e.g., `fr` for French) and create a Python `__init__.py`.
-2. Implement the necessary functions in the new file to translate time into spoken expressions in the target language.
+1. Create a new directory under the `saa/luga` directory, using the ISO 639-1 language code as the filename (e.g., `fr` for French) and create a Python `__init__.py`.
+2. Implement the necessary functions in the new file to translate time into spoken expressions of the target language.
 3. Test the new language integration thoroughly to ensure accurate and reliable translations.
 4. Consider submitting a pull request to contribute your new language support to the main **Saa** repository.
 
