@@ -43,7 +43,7 @@ class Danish(Luga):
     }
 
     @staticmethod
-    def time_logic(hour, minute) -> tuple[int, int, str, str]:
+    def time_logic(hour: int, minute: int) -> tuple[int, int, str, str]:
         is_to = "to" if minute >= 30 else "past"
         is_minutes = "minutter" if minute > 1 else "minut"
 
@@ -54,7 +54,7 @@ class Danish(Luga):
         return hour, minute, is_to, is_minutes
 
     @staticmethod
-    def post_logic(text):
+    def post_logic(text: str) -> str:
         text = " ".join(
             word.replace("en", "et")
             if (word.startswith("halv") or word == "en")
