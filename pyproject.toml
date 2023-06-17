@@ -19,6 +19,6 @@ pre-commit = "^3.3.3"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[project.urls]
+[tool.urls]
 "Homepage" = "https://github.com/Proteusiq/saa"
 "Bug Tracker" = "https://github.com/Proteusiq/saa/issues"
