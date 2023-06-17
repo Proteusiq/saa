@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from saa.core.language import Luga
 
 
-@dataclass
+@dataclass(init=False, eq=False, repr=False, frozen=False)
 class English(Luga):
     time = {
         "to": "{minute} is_minutes to {hour}",
