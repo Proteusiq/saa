@@ -52,6 +52,49 @@ print(spoken_time)
 # Output: "quarter to twelve"
 ```
 
+<details>
+  <summary>Using Saa with LangChain 🦜🔗</summary>
+
+```python
+from datetime import datetime
+from langchain.agents import initialize_agent, Tool
+from langchain.agents import AgentType
+from langchain.llms import OpenAI
+from langchain import SerpAPIWrapper
+from saa import Clock
+
+search = SerpAPIWrapper()
+clock = Clock("en")
+
+tools = [
+    Tool(
+        name="Search",
+        func=search.run,
+        description="useful for when you need to answer questions about current events",
+    ),
+    Tool(
+        name="Saa",
+        func=lambda x:  f"It is {clock(datetime.now())}",
+        description=("A Current Timer teller. Use this more s about what is current "
+                     "time, like 'what time is it?' or 'what is the current clock?'"),
+        return_direct=False,
+    ),
+]
+
+agent = initialize_agent(
+    tools,
+    OpenAI(temperature=0),
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True,
+)
+
+if __name__ == "__main__":
+
+    user_input = input("Human: ") 
+    print(agent.run(user_input))
+  ```
+</details>
+
 ## Supported Languages
 
 **Saa** currently supports the following languages:
