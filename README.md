@@ -95,6 +95,7 @@ if __name__ == "__main__":
   ```
 Example: 
 Prompt: `How many minutes are left before it is a quarter past twelve? Think step by step` 
+
 ![image](https://github.com/Proteusiq/saa/assets/14926709/5244c159-5fc3-4ac6-a9fa-829f9cf6ece6)
 
 
