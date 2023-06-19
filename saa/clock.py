@@ -1,5 +1,5 @@
 from datetime import time, datetime
-from functools import singledispatchmethod
+from functools import singledispatch
 from typing import Union
 from saa.core.watch import Watch
 from saa.core.plugins import supported_languages
@@ -7,6 +7,21 @@ from saa.core.plugins import supported_languages
 SUPPORTED_LANGUAGES = {luga for luga in supported_languages.keys()}
 TimeType = Union[str, time, datetime]
 
+@singledispatch
+def inputs(_: TimeType) -> time:
+    raise NotImplementedError
+
+@inputs.register(str)
+def _(time: str) -> time:
+    return datetime.strptime(time, "%H:%M").time()
+
+@inputs.register(datetime)
+def _(time: datetime) -> time:
+    return time.time()
+
+@inputs.register(time)
+def _(time: time) -> time:
+    return time
 
 class Clock:
     def __init__(self, language: str):
@@ -15,25 +30,10 @@ class Clock:
 
         self.language = supported_languages.get(language)
 
-    @singledispatchmethod
-    def inputs(self, _: TimeType) -> time:
-        raise NotImplementedError
-
-    @inputs.register(str)
-    def _(self, time: str) -> time:
-        return datetime.strptime(time, "%H:%M").time()
-
-    @inputs.register(datetime)
-    def _(self, time: datetime) -> time:
-        return time.time()
-
-    @inputs.register(time)
-    def _(self, time: time) -> time:
-        return time
 
     def convert(self, time: TimeType) -> str:
         watch = Watch(self.language)
-        time = self.inputs(time)
+        time = inputs(time)
         return watch(time)
 
     def __call__(self, time: TimeType) -> str:
