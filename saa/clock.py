@@ -9,6 +9,19 @@ TimeType = Union[str, time, datetime]
 
 @singledispatch
 def inputs(_: TimeType) -> time:
+    """Input Parser
+
+    Accepts string, time or datetime and return time object
+
+    Args:
+        _ (TimeType): string, time or datetime object
+
+    Raises:
+        NotImplementedError: shell for dispatching
+
+    Returns:
+        time: python time object
+    """
     raise NotImplementedError
 
 @inputs.register(str)
