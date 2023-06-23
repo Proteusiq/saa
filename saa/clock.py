@@ -45,6 +45,14 @@ class Clock:
 
 
     def convert(self, time: TimeType) -> str:
+        """Transform time to spoken expressions 
+
+        Args:
+            time (TimeType): string, time or datetime object
+
+        Returns:
+            str: spoken expressions
+        """
         watch = Watch(self.language)
         time = inputs(time)
         return watch(time)
