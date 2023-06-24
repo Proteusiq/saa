@@ -10,6 +10,8 @@ test_cases = [
     (time(hour=13, minute=15), Swahili, "saa saba na robo mchana"),
     (time(hour=13, minute=30), Swahili, "saa saba na nusu mchana"),
     (time(hour=20, minute=0), Swahili, "saa mbili usiku"),
+    (time(hour=19, minute=25), Swahili, "saa moja na dakika ishirini na tano jioni"),
+    (time(hour=19, minute=41), Swahili,"saa mbili kasoro dakika kumi na tisa usiku"),
 ]
 
 
