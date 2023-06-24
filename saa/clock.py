@@ -7,6 +7,7 @@ from saa.core.plugins import supported_languages
 SUPPORTED_LANGUAGES = {luga for luga in supported_languages.keys()}
 TimeType = Union[str, time, datetime]
 
+
 @singledispatch
 def inputs(_: TimeType) -> time:
     """Input Parser
@@ -24,17 +25,21 @@ def inputs(_: TimeType) -> time:
     """
     raise NotImplementedError
 
+
 @inputs.register(str)
 def _(time: str) -> time:
     return datetime.strptime(time, "%H:%M").time()
+
 
 @inputs.register(datetime)
 def _(time: datetime) -> time:
     return time.time()
 
+
 @inputs.register(time)
 def _(time: time) -> time:
     return time
+
 
 class Clock:
     def __init__(self, language: str):
@@ -43,9 +48,8 @@ class Clock:
 
         self.language = supported_languages.get(language)
 
-
     def convert(self, time: TimeType) -> str:
-        """Transform time to spoken expressions 
+        """Transform time to spoken expressions
 
         Args:
             time (TimeType): string, time or datetime object

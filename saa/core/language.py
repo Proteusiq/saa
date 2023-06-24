@@ -21,7 +21,7 @@ class Luga(ABC):
         pass
 
     @abstractmethod
-    def time_logic(hour:int, minute:int) -> tuple[int, int, str, str]:
+    def time_logic(hour: int, minute: int) -> tuple[int, int, str, str]:
         pass
 
     @abstractmethod

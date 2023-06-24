@@ -5,8 +5,8 @@ from saa.core.language import Luga
 @dataclass(init=False, eq=False, repr=False, frozen=False)
 class English(Luga):
     time = {
-        "to": "{minute} is_minutes to {hour}",
-        "past": "{minute} is_minutes past {hour}",
+        "to": "{minute} time_indicator to {hour}",
+        "past": "{minute} time_indicator past {hour}",
         0: "{hour} o'clock",
         15: "quarter past {hour}",
         45: "quarter to {hour}",
@@ -44,13 +44,13 @@ class English(Luga):
     @staticmethod
     def time_logic(hour, minute) -> tuple[int, int, str, str]:
         is_to = "to" if minute > 30 else "past"
-        is_minutes = "minutes" if minute > 1 else "minute"
+        time_indicator = "minutes" if minute > 1 else "minute"
 
         if is_to == "to":
             hour += 1
             minute = 60 - minute
 
-        return hour, minute, is_to, is_minutes
+        return hour, minute, is_to, time_indicator
 
     @staticmethod
     def post_logic(text: str) -> str:

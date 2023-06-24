@@ -10,9 +10,9 @@ class TemplateLogic:
         time = self.language.time
 
         if minute in time:
-            hour, *_, is_minutes = time_logic(hour, minute)
-            return hour, minute, time[minute].replace("is_minutes", is_minutes)
+            hour, *_, time_indicator = time_logic(hour, minute)
+            return hour, minute, time[minute].replace("time_indicator", time_indicator)
         else:
-            hour, minute, is_to, is_minutes = time_logic(hour, minute)
+            hour, minute, is_to, time_indicator = time_logic(hour, minute)
 
-            return hour, minute, time[is_to].replace("is_minutes", is_minutes)
+            return hour, minute, time[is_to].replace("time_indicator", time_indicator)
