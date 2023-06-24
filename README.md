@@ -16,6 +16,9 @@ clock("11:15") # 'quarter past eleven'
 ur = Clock("da")
 t = time(hour=7, minute=30)
 ur(t) # 'halvotte'
+
+muda = Clock("sw")
+muda("7:29") # 'saa moja na dakika ishirini na tisa asubuhi'
 ```
 
 ## Features
