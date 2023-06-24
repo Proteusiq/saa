@@ -104,7 +104,7 @@ Prompt: `How many minutes are left before it is a quarter past twelve? Think ste
 </details>
 
 <details>
-  <summary>Adding New Language</summary>
+  <summary>Adding New Language 💾</summary>
 
 Using `Kiswahili` as an example as ABC of how to add a new language
  1. Create a folder with  under the `saa/luga` directory, using the ISO 639-1 language code
