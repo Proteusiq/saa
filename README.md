@@ -98,9 +98,143 @@ Prompt: `How many minutes are left before it is a quarter past twelve? Think ste
 
 ![image](https://github.com/Proteusiq/saa/assets/14926709/5244c159-5fc3-4ac6-a9fa-829f9cf6ece6)
 
+</details>
 
+<details>
+  <summary>Adding New Language</summary>
+
+Using `Kiswahili` as an example as ABC of how to add a new language
+ 1. Create a folder with  under the `saa/luga` directory, using the ISO 639-1 language code
+ ```bash
+ mkdir saa/luga/sw && touch saa/luga/sw/__init__.py
+ ```
+
+ 2. Contents of  `__init__.py` must have the following pattern
+ ```python
+from dataclasses import dataclass
+from saa.core.language import Luga
+
+
+@dataclass(init=False, eq=False, repr=False, frozen=False)
+class LanguageName(Luga):
+    ...
+
+class Language(LanguageName):
+    pass
+ ```
+
+So for `Swahili` the skeleton of `saa/luga/sw/__init__.py` would be:
+
+```python
+...
+
+@dataclass(init=False, eq=False, repr=False, frozen=False)
+class Swahili(Luga):
+    ...
+
+class Language(Swahili):
+    pass
+...
+```
+
+Since we are implementing `Luga`, our tasks now is to implement both the properties (`time`, `number_connector`, `connect_format`) and static methods (`time_logic`, `post_logic`).
+
+In Swahili `class`, time is expressed in terms of hour and then minutes. time_indicator
+
+```python
+time = {
+    "to": "saa {hour} na dakika {minute} time_indicator",
+    "past": "saa {hour} kasoro dakika {minute}time_indicator",
+    0: "saa {hour} time_indicator",
+    15: "saa {hour} na robo time_indicator",
+    45: "saa {hour} kasorobo time_indicator",
+    30: "saa {hour} na nusu time_indicator",
+}
+```
+
+The numbers connector is Swahili is `na`, and the connection format is "{tens_digits @ index 0} {[number_connector] @ index 1} {ones_digits @ index 2}"
+
+```python
+number_connector = "na"
+connect_format = "{0} {1} {2}"
+```
+
+Given the implementations of Numbers converter, will include 11-19 even though we could deduced them as 20-50s. The numbers are as following:
+```python
+numbers = {
+    0: "sifuri",
+    1: "moja",
+    2: "mbili",
+    3: "tatu",
+    4: "nne",
+    5: "tano",
+    6: "sita",
+    7: "saba",
+    8: "nane",
+    9: "tisa",
+    10: "kumi",
+    11: "kumi na moja",
+    12: "kumi na mbili",
+    13: "kumi na tatu",
+    14: "kumi na nne",
+    15: "kumi na tano",
+    16: "kumi na sita",
+    17: "kumi na saba",
+    18: "kumi na nane",
+    19: "kumi na tisa",
+    20: "ishirini",
+    30: "thelathini",
+    40: "arobaini",
+    50: "hamsini",
+}
+```
+
+The major task is on time logic. In Swahili, 7 AM is the first hour in the morning, while 7 PM is the first hour in the evenning (jioni). 6 AM is the 12th hour in the morning ( asubuhi), while 6 PM is the 12th hour in the evenning.
+
+```
+"""
+ 0 - 11 asubuhi 
+ 12 - 15 mchana 
+ 16 - 19 jioni
+ 20 - 23 usiku 
+"""
+
+day_divisions = {
+        0: "asubuhi",
+        1: "asubuhi",
+        2: "asubuhi",
+        3: "asubuhi",
+        4: "asubuhi",
+        5: "asubuhi",
+        6: "asubuhi",
+        7: "asubuhi",
+        8: "asubuhi",
+        9: "asubuhi",
+        10: "asubuhi",
+        11: "asubuhi",
+        12: "mchana",
+        13: "mchana",
+        14: "mchana",
+        15: "mchana",
+        16: "jioni",
+        17: "jioni",
+        18: "jioni",
+        19: "jioni",
+        20: "usiku",
+        21: "usiku",
+        22: "usiku",
+        23: "usiku",
+    }
+
+    @staticmethod
+    def post_logic(text: str) -> str:
+        return text
+```
+
+Time to write tests ...
 
 </details>
+
 
 ## Supported Languages
 
