@@ -242,9 +242,9 @@ Time to write tests ...
 
 - English (`en`)
 - Danish (`da`)
+- Swahile(`sw`)
 
 Coming ...
-- Swahile(`sw`)
 - French (`fr`)
 - Spanish (`es`)
 - German (`de`)
