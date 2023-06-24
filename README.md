@@ -143,8 +143,8 @@ In Swahili `class`, time is expressed in terms of hour and then minutes. time_in
 
 ```python
 time = {
-    "to": "saa {hour} na dakika {minute} time_indicator",
-    "past": "saa {hour} kasoro dakika {minute}time_indicator",
+    "past": "saa {hour} na dakika {minute} time_indicator",
+    "to": "saa {hour} kasoro dakika {minute} time_indicator",
     0: "saa {hour} time_indicator",
     15: "saa {hour} na robo time_indicator",
     45: "saa {hour} kasorobo time_indicator",
