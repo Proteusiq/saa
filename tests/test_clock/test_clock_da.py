@@ -32,13 +32,13 @@ test_plural_cases = [
     (time(hour=5, minute=40), Danish, "tyve minutter i seks"),
     (time(hour=18, minute=15), Danish, "kvart over seks"),
     (time(hour=17, minute=45), Danish, "kvart i seks"),
-    (time(hour=21, minute=30), Danish, "halv ti"),
+    (time(hour=21, minute=30), Danish, "halvti"),
     (time(hour=12, minute=30), Danish, "halvet"),
     (time(hour=1, minute=30), Danish, "halvto"),
 ]
 
 
-@pytest.mark.parametrize("test_input, language, test_output", test_cases)
+@pytest.mark.parametrize("test_input, language, test_output", test_plural_cases)
 def test_cases(test_input, language, test_output):
     clock = Watch(language=language)
     assert test_output == clock(test_input)

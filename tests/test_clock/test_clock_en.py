@@ -24,7 +24,7 @@ test_plural_cases = [
 ]
 
 
-@pytest.mark.parametrize("test_input, language, test_output", test_cases)
+@pytest.mark.parametrize("test_input, language, test_output", test_plural_cases)
 def test_cases(test_input, language, test_output):
     clock = Watch(language=language)
     assert test_output == clock(test_input)
