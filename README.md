@@ -27,7 +27,7 @@ muda("7:29") # 'saa moja na dakika ishirini na tisa asubuhi'
 - Easy-to-use API with a simple and intuitive design.
 - Pure Python implementation with no external dependencies.
 - Extensible architecture for adding support for additional languages using the plugin design pattern.
-- Compatible with Python 3.8 and higher.
+- Compatible with Python 3.6 and higher.
 
 ## Installation
 
