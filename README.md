@@ -106,8 +106,8 @@ Prompt: `How many minutes are left before it is a quarter past twelve? Think ste
 <details>
   <summary>Adding New Language 💾</summary>
 
-Using `Kiswahili` as an example as ABC of how to add a new language
- 1. Create a folder with  under the `saa/luga` directory, using the ISO 639-1 language code
+Using `Kiswahili` as an example of how to add a new language
+ 1. Create a folder under `saa/luga` directory, using the ISO 639-1 language code, with dunder init python file.
  ```bash
  mkdir saa/luga/sw && touch saa/luga/sw/__init__.py
  ```
@@ -140,9 +140,9 @@ class Language(Swahili):
 ...
 ```
 
-Since we are implementing `Luga`, our tasks now is to implement both the properties (`time`, `number_connector`, `connect_format`) and static methods (`time_logic`, `post_logic`).
+Since we are implementing `Luga`, our tasks now are to implement both the properties (`time`, `number_connector`, `connect_format`) and static methods (`time_logic`, `post_logic`).
 
-In Swahili `class`, time is expressed in terms of hour and then minutes. time_indicator
+In Swahili `class`, time is expressed in terms of hour first and then minutes. time_indicator is a placeholder for whatever changing logic, e.g. minute or minutes. For Swahili the logic is what part of the day it is, morning, noon, evenning or night.
 
 ```python
 time = {
@@ -192,7 +192,7 @@ numbers = {
 }
 ```
 
-The major task is on time logic. In Swahili, 7 AM is the first hour in the morning, while 7 PM is the first hour in the evenning (jioni). 6 AM is the 12th hour in the morning ( asubuhi), while 6 PM is the 12th hour in the evenning.
+The major task is on time logic. In Swahili, 7 AM is the first hour in the morning (asubuhi), while 7 PM is the first hour in the evenning (jioni). 6 AM is the 12th hour in the morning ( asubuhi), while 6 PM is the 12th hour in the evenning(jioni).
 
 ```
 """
