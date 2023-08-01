@@ -15,7 +15,7 @@ class Deutsch(Luga):
     connect_format = "{0}{1}{2}"
     numbers = {
         0: "null",
-        1: ("ein", "eine"),   
+        1: "ein",   # ein und zwanzig /  eine Minute / ein Uhr
         2: "zwei",
         3: "drei",
         4: "vier",
