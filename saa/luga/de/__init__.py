@@ -4,15 +4,15 @@ from saa.core.language import Luga
 @dataclass(init=False, eq=False, repr=False, frozen=False)
 class Deutsch(Luga):
     time = {
-        "to": "{minute} {time_indicator} vor {hour} Uhr",
-        "past": "{minute} {time_indicator} nach {hour} Uhr",
+        "to": "{minute} time_indicator vor {hour} Uhr",
+        "past": "{minute} time_indicator nach {hour} Uhr",
         0: "{hour} Uhr",
-        15: "Viertel nach {hour}",
-        45: "Viertel vor {hour}",
-        30: "Halb {hour}",
+        15: "viertel nach {hour}",
+        45: "viertel vor {hour}",
+        30: "halb {hour}",
     }
     number_connector = "und"
-    connect_format = "{0}{1}{2}"
+    connect_format = "{2}{1}{0}"
     numbers = {
         0: "null",
         1: "ein",   # ein und zwanzig /  eine Minute / ein Uhr
@@ -42,39 +42,34 @@ class Deutsch(Luga):
 
     @staticmethod
     def time_logic(hour, minute) -> tuple[int, int, str, str]:
-        if minute in [0, 15, 30, 45]:
-            if minute == 45 or minute == 30:
-                hour += 1
-            return (hour, minute, '', '')  
-
-        is_to = "to" if minute > 30 else "past"
-        time_indicator = "Minuten" if minute not in [1,59] else "Minute"
-
+        
+        is_to = "to" if minute >= 30 else "past"
+        time_indicator = "Minuten" if minute not in (1,59) else "Minute"
+    
+      
         if is_to == "to":
             hour += 1
             minute = 60 - minute
 
-        if minute <= 20 or minute == 30 or minute == 40 or minute == 50:   
-            if minute == 1:  
-                minute = Deutsch.numbers[minute][1] if is_to == 'to' else Deutsch.numbers[minute][0]
-            else:
-                minute = Deutsch.numbers[minute]
-        else:
-            tens = minute // 10 * 10
-            ones = minute % 10
-            minute = Deutsch.connect_format.format(Deutsch.numbers[ones], Deutsch.number_connector, Deutsch.numbers[tens])
-
-        hour = Deutsch.numbers[hour]
-
         return hour, minute, is_to, time_indicator
 
 
+
     @staticmethod
-    def post_logic(hour, minute, is_to, time_indicator) -> str:
-        if is_to:  
-            return Deutsch.time[is_to].format(minute=minute, time_indicator=time_indicator, hour=hour)
-        else:  
-            return Deutsch.time[minute].format(hour=hour)
+    def post_logic(text:str) -> str:
+
+        
+        if text in ("viertel nach ein", 
+                    "viertel vor ein",
+                    "halb ein"):
+            text+="s"
+
+        text = (text
+                .replace("ein Minute", "eine Minute")
+                .replace("null", "zwölf")
+        )
+        
+        return text
         
 class Language(Deutsch):
     pass
