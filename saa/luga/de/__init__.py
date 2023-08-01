@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from saa.core.language import Luga
 
+
 @dataclass(init=False, eq=False, repr=False, frozen=False)
 class Deutsch(Luga):
     time = {
@@ -15,7 +16,7 @@ class Deutsch(Luga):
     connect_format = "{2}{1}{0}"
     numbers = {
         0: "null",
-        1: "ein",   # ein und zwanzig /  eine Minute / ein Uhr
+        1: "ein",  # ein und zwanzig /  eine Minute / ein Uhr
         2: "zwei",
         3: "drei",
         4: "vier",
@@ -42,36 +43,24 @@ class Deutsch(Luga):
 
     @staticmethod
     def time_logic(hour, minute) -> tuple[int, int, str, str]:
-        
         is_to = "to" if minute >= 30 else "past"
-        time_indicator = "Minuten" if minute not in (1,59) else "Minute"
-    
-      
+        time_indicator = "Minuten" if minute not in (1, 59) else "Minute"
+
         if is_to == "to":
             hour += 1
             minute = 60 - minute
 
         return hour, minute, is_to, time_indicator
 
-
-
     @staticmethod
-    def post_logic(text:str) -> str:
+    def post_logic(text: str) -> str:
+        if text in ("viertel nach ein", "viertel vor ein", "halb ein"):
+            text += "s"
 
-        
-        if text in ("viertel nach ein", 
-                    "viertel vor ein",
-                    "halb ein"):
-            text+="s"
+        text = text.replace("ein Minute", "eine Minute").replace("null", "zwölf")
 
-        text = (text
-                .replace("ein Minute", "eine Minute")
-                .replace("null", "zwölf")
-        )
-        
         return text
-        
+
+
 class Language(Deutsch):
     pass
-
-
