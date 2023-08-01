@@ -247,11 +247,11 @@ Time to write tests ...
 - English (`en`)
 - Danish (`da`)
 - Swahile(`sw`)
+- German (`de`)
 
 Coming ...
 - French (`fr`)
 - Spanish (`es`)
-- German (`de`)
 - Italian (`it`)
 
 ## Extending Language Support
