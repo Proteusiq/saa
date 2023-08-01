@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "saa"
-version = "0.0.5"
+version = "0.0.6"
 description = "Converting time into natural language phrases"
 authors = ["Prayson W. Daniel <praysonpi@gmail.com>"]
 license = "MIT"
