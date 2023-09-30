@@ -27,18 +27,18 @@ def inputs(_: TimeType) -> time:
 
 
 @inputs.register(str)
-def _(time: str) -> time:
-    return datetime.strptime(time, "%H:%M").time()
+def _(t: str) -> time:
+    return datetime.strptime(t, "%H:%M").time()
 
 
 @inputs.register(datetime)
-def _(time: datetime) -> time:
-    return time.time()
+def _(t: datetime) -> time:
+    return t.time()
 
 
 @inputs.register(time)
-def _(time: time) -> time:
-    return time
+def _(t: time) -> time:
+    return t
 
 
 class Clock:
