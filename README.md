@@ -4,7 +4,7 @@ Translating time into human-friendly spoken expressions
 
 ![Saa OpenJourny](watch.png)
 
-**Saa** allows you to effortlessly translate time into human-friendly spoken expressions. The word `saa` means `hour` in Swahili, and this package aims to humanify time expression across languages. It is build using pure Python standard libraries.
+**Saa** allows you to effortlessly translate time into human-friendly spoken expressions. The word `saa` means `hour|time` in Swahili, and this package aims to humanify time expression across languages. It is build using pure Python standard libraries.
 
 ```python
 from datetime import time
