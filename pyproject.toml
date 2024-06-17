@@ -19,6 +19,7 @@ dev-dependencies = [
     "black>=24.4.2",
     "ruff>=0.4.8",
     "pre-commit>=3.7.1",
+    "pip>=24.0",
 ]
 
 [tool.hatch.metadata]
