@@ -247,7 +247,7 @@ Time to write tests ...
 - English (`en`)
 - Danish (`da`)
 - Swahile(`sw`)
-- German (`de`)
+- German (`de`) # review needed
 
 Coming ...
 - French (`fr`)
