@@ -275,7 +275,7 @@ If you'd like to contribute to **Saa**, please follow the guidelines outlined in
 
 ## Acknowledgments
 
-I would like to express our future gratitude to the developers of French, Spanish, German, and Italian language plugins for their valuable contributions to the **Saa** package. 🤣
+We would like to express our future gratitude to the developers of French, Spanish, German, and Italian language plugins for their valuable contributions to the **Saa** package. 🤣
 
 ## Contact
 
