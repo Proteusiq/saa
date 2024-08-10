@@ -4,7 +4,7 @@ from typing import Union
 from saa.core.watch import Watch
 from saa.core.plugins import supported_languages
 
-SUPPORTED_LANGUAGES = {luga for luga in supported_languages.keys()}
+SUPPORTED_LANGUAGES = {luga for luga in supported_languages}
 TimeType = Union[str, time, datetime]
 
 
