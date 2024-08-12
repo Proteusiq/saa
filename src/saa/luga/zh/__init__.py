@@ -6,7 +6,7 @@ from saa.core.language import Luga
 class Chinese(Luga):
     time = {
         "to": "差{minute}time_indicator{hour}点",
-        "past": "{hour}点{minute}",
+        "past": "{hour}点{minute}time_indicator",
         0: "{hour}点",
         15: "{hour}点一刻",
         45: "差一刻{hour}点",
@@ -48,14 +48,13 @@ class Chinese(Luga):
     @staticmethod
     def time_logic(hour, minute) -> tuple[int, int, str, str]:
         is_to = "past"
-        time_indicator = "分"
-
         if minute in [45, 50]:
             is_to = "to"
-
         if is_to == "to":
             hour += 1
             minute = 60 - minute
+
+        time_indicator = "" if minute > 10 else "分"
 
         return hour, minute, is_to, time_indicator
 
