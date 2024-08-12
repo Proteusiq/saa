@@ -1,7 +1,8 @@
 from datetime import time
+
 import pytest
-from saa.core.watch import Watch
 from saa.core.plugins import supported_languages
+from saa.core.watch import Watch
 
 Swahili = supported_languages.get("sw")
 

@@ -1,4 +1,5 @@
-from datetime import time, datetime
+from datetime import datetime, time
+
 import pytest
 from saa import Clock
 

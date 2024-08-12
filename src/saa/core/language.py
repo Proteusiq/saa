@@ -1,4 +1,4 @@
-from abc import abstractmethod, ABC, abstractproperty
+from abc import ABC, abstractmethod, abstractproperty
 from dataclasses import dataclass
 
 

@@ -26,6 +26,9 @@ select = [
   "N", # naming
 ]
 
+[tool.ruff.lint.per-file-ignores]
+"src/saa/*/*.py" = ["N805"] # ignored as first argument is not self
+
 
 [tool.rye.scripts]
 fmt = "rye fmt"
