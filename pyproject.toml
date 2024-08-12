@@ -1,16 +1,17 @@
 [project]
 name = "saa"
-version = "0.0.6"
+dynamic = ["version"]
 description = "Converting time into natural language phrases"
 authors = [{ name = "Prayson W. Daniel", email = "praysonpi@gmail.com" }]
 dependencies = []
-license = "MIT"
-readme = "README.md"
 requires-python = ">= 3.8"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.version]
+source = "scm"
 
 
 [tool.rye]
@@ -36,12 +37,6 @@ lint = "rye lint --fix"
 check = "pyright"
 test = "rye test"
 all = { chain = ["fmt", "lint", "check", "test"] }
-
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/saa"]
 
 [tool.pyright]
 venvPath = "."

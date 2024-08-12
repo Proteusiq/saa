@@ -1,16 +1,17 @@
-name: Python package
+name: release
 on:
-  push:
-    tags:
-      - "v*.*.*"
+  release:
+    types: [published]
 jobs:
-  build:
+  publish:
+    environment: release 
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
-      - name: Build and publish to pypi
-        uses: JRubics/poetry-publish@v1.17
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
-          allow_poetry_pre_release: "yes"
-          ignore_dev_requirements: "yes"
+          python-version: "3.12"
+      - run: pip install build && python -m build       # build
+      - uses: pypa/gh-action-pypi-publish@release/v1    # publish
