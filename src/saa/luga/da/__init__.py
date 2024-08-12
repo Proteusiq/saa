@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 from saa.core.language import Luga
 
 
