@@ -19,6 +19,10 @@ ur(t) # 'halvotte'
 
 muda = Clock("sw")
 muda("7:29") # 'saa moja na dakika ishirini na tisa asubuhi'
+
+clock = Clock("zh")
+clock("11:34") # ''十一点三十四'
+
 ```
 
 ## Features
