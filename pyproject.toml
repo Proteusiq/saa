@@ -12,15 +12,27 @@ requires-python = ">= 3.8"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+
 [tool.rye]
 managed = true
-dev-dependencies = [
-    "pytest>=8.2.2",
-    "black>=24.4.2",
-    "ruff>=0.4.8",
-    "pre-commit>=3.7.1",
-    "pip>=24.0",
+dev-dependencies = ["ruff>=0.5.6", "pytest>=8.3.2", "pyright>=1.1.374"]
+
+[tool.ruff.lint]
+select = [
+  "A", # warn about shadowing built-ins
+  "E", # style stuff, whitespaces
+  "F", # important pyflakes lints
+  "I", # import sorting
+  "N", # naming
 ]
+
+
+[tool.rye.scripts]
+fmt = "rye fmt"
+lint = "rye lint --fix"
+check = "pyright"
+test = "rye test"
+all = { chain = ["fmt", "lint", "check", "test"] }
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -28,6 +40,11 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/saa"]
 
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["src"]
+exclude = ["src/saa/luga", "src/saa/core/*"]
 [tool.urls]
 "Homepage" = "https://github.com/Proteusiq/saa"
 "Bug Tracker" = "https://github.com/Proteusiq/saa/issues"
