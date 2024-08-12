@@ -1,4 +1,4 @@
-name: pr
+name: qa_test
 on:
   workflow_dispatch:
   pull_request:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: eifinger/setup-rye@v3
-      - run: rye pin 3.12         # pin your Python version
+      - run: rye pin 3.12.2         # pin your Python version
       - run: |                    # abort if the lockfile changes
           rye sync
           [[ -n $(git diff --stat requirements.lock) ]] && exit 1
