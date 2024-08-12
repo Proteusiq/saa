@@ -251,6 +251,7 @@ Time to write tests ...
 - English (`en`)
 - Danish (`da`)
 - Swahile(`sw`)
+- Chinese(`zh`)
 - German (`de`) # review needed
 
 Coming ...
