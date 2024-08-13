@@ -1,6 +1,6 @@
 [project]
 name = "saa"
-dynamic = ["version"]
+version = "0.0.7a"
 description = "Converting time into natural language phrases"
 authors = [{ name = "Prayson W. Daniel", email = "praysonpi@gmail.com" }]
 dependencies = []
@@ -9,9 +9,6 @@ requires-python = ">= 3.8"
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
-
-[tool.pdm.version]
-source = "scm"
 
 
 [tool.rye]
