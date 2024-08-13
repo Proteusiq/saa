@@ -167,6 +167,7 @@ connect_format = "{0} {1} {2}"
 ```
 
 Given the implementations of Numbers converter, will include 11-19 even though we could deduced them as 20-50s. The numbers are as following:
+
 ```python
 numbers = {
     0: "sifuri",
@@ -198,7 +199,7 @@ numbers = {
 
 The major task is on time logic. In Swahili, 7 AM is the first hour in the morning (asubuhi), while 7 PM is the first hour in the evenning (jioni). 6 AM is the 12th hour in the morning ( asubuhi), while 6 PM is the 12th hour in the evenning(jioni).
 
-```
+```python
 """
  0 - 11 asubuhi 
  12 - 15 mchana 
