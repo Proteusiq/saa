@@ -239,7 +239,7 @@ day_divisions = {
         return text
 ```
 
-Time to write tests ...
+Time to write tests. Duplicate English or Danish tests, and replace it with new language. See Swahili tests. 
 
 </details>
 
