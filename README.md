@@ -166,7 +166,7 @@ number_connector = "na"
 connect_format = "{0} {1} {2}"
 ```
 
-Given the implementations of Numbers converter, will include 11-19 even though we could deduced them as 20-50s. The numbers are as following:
+Given the implementations of Numbers converter, will include 11-19 even though we could deduced them as in 20-50s. The numbers are as following:
 
 ```python
 numbers = {
