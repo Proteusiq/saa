@@ -23,6 +23,9 @@ muda("7:29") # 'saa moja na dakika ishirini na tisa asubuhi'
 clock = Clock("zh")
 clock("11:34") # '十一点三十四'
 
+clock = Clock("ru")
+clock("12:17") # 'двенадцать семнадцать'
+
 ```
 
 ## Features
@@ -251,8 +254,9 @@ Time to write tests. Duplicate English or Danish test_number and test_clock fold
 
 - English (`en`)
 - Danish (`da`)
-- Swahile(`sw`)
-- Chinese(`zh`)
+- Swahili (`sw`)
+- Chinese (`zh`)
+- Russian (`ru`)
 - German (`de`) # review needed
 
 Coming ...
