@@ -7,16 +7,11 @@ from saa.core.language import Luga
 class Russian(Luga):
     time = {
         "to": "{hour} {minute}",
+        "to_zero": "{hour} ноль time_indicator",
+        "one": "час {minute}",
+        "one_zero": "час ноль time_indicator",
         0: "{hour} time_indicator",
-        1: "{hour} ноль одна",
-        2: "{hour} ноль две",
-        3: "{hour} ноль три",
-        4: "{hour} ноль четыре",
         5: "пять минут time_indicator",
-        6: "{hour} ноль шесть",
-        7: "{hour} ноль семь",
-        8: "{hour} ноль восемь",
-        9: "{hour} ноль девять",
         10: "десять минут time_indicator",
         15: "пятнадцать минут time_indicator",
         20: "двадцать минут time_indicator",
@@ -84,6 +79,7 @@ class Russian(Luga):
 
     @staticmethod
     def time_logic(hour: int, minute: int) -> tuple[int, int, str, str]:
+        is_to = "to"
         time_indicator = Russian.num_text(hour, ["час", "часа", "часов"])
 
         if hour == 0:
@@ -94,6 +90,9 @@ class Russian(Luga):
 
         if hour > 12:
             hour -= 12
+
+        if hour == 1:
+            is_to = "one"
 
         if minute == 0:
             time_indicator = Russian.num_text(hour, ["час", "часа", "часов"])
@@ -106,7 +105,20 @@ class Russian(Luga):
             else:
                 time_indicator = "{hour}"
 
-        return hour, minute, "to", time_indicator
+        elif minute < 10:
+            if minute == 1:
+                time_indicator = "одна"
+            elif minute == 2:
+                time_indicator = "две"
+            else:
+                time_indicator = "{minute}"
+
+            if hour == 1:
+                is_to = "one_zero"
+            else:
+                is_to = "to_zero"
+
+        return hour, minute, is_to, time_indicator
 
     @staticmethod
     def post_logic(text: str) -> str:
