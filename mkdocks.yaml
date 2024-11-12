@@ -1,0 +1,41 @@
+site_name: Saa
+repo_url: https://github.com/proteusiq/saa
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+nav:
+  - Introduction: index.md
+  - API: api_docs.md
+  - ChangeLogs: changelog.md
+
+markdown_extensions:
+  - pymdownx.snippets:
+      check_paths: true
+
+plugins:
+  - search:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            separate_signature: yes
+            show_signature_annotations: fase
+            show_source: no
+            show_root_full_path: yes
+            merge_init_into_class: yes
+            show_submodules: false
+
+watch:
+  - src/saa

@@ -43,3 +43,8 @@ exclude = ["src/saa/luga", "src/saa/core/*"]
 [tool.urls]
 "Homepage" = "https://github.com/Proteusiq/saa"
 "Bug Tracker" = "https://github.com/Proteusiq/saa/issues"
+
+[dependency-groups]
+doc = [
+    "mkdocs>=1.6.1",
+]
