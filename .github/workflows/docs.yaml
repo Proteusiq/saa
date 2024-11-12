@@ -15,4 +15,4 @@ jobs:
         uses: astral-sh/setup-uv@v3
 
       - run: uv sync --group docs
-      - run: uv run mkdocs gh-deploy --force --clean --verbose
+      - run: uv run mkdocs gh-deploy --force --clean
