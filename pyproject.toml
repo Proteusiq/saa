@@ -46,5 +46,7 @@ exclude = ["src/saa/luga", "src/saa/core/*"]
 
 [dependency-groups]
 doc = [
+    "mkdocs-material>=9.5.44",
     "mkdocs>=1.6.1",
+    "mkdocstrings>=0.26.1",
 ]
