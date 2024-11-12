@@ -63,50 +63,64 @@ print(spoken_time)
 ```
 
 <details>
-  <summary>Using Saa with LangChain 🦜🔗</summary>
+  <summary>Using Saa with Swarm 🦜🔗</summary>
 
 ```python
 from datetime import datetime
-from langchain.agents import initialize_agent, Tool
-from langchain.agents import AgentType
-from langchain.llms import OpenAI
-from langchain import SerpAPIWrapper
+from typing import Literal
+
+from openai import OpenAI
 from saa import Clock
+from swarm import Agent, Swarm
 
-search = SerpAPIWrapper()
-clock = Clock("en")
+ollama_client = OpenAI(base_url="http://localhost:11434/v1", api_key="NotNeeded")
 
-tools = [
-    Tool(
-        name="Search",
-        func=search.run,
-        description="useful for when you need to answer questions about current events",
-    ),
-    Tool(
-        name="Saa",
-        func=lambda x:  f"It is {clock(datetime.now())}",
-        description=("A Current Timer teller. Use this more s about what is current "
-                     "time, like 'what time is it?' or 'what is the current clock?'"),
-        return_direct=False,
-    ),
-]
+client = Swarm(client=ollama_client)
 
-agent = initialize_agent(
-    tools,
-    OpenAI(temperature=0),
-    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-    verbose=True,
+
+def get_spoken_time(language: Literal["en", "da"]) -> str:
+    """
+    Get spoken time:
+       language: iso code for a language
+    """
+    clock = Clock(language)
+    now = datetime.now()
+    results = clock(now)
+    print(results)
+    return results
+
+
+def transfer_to_lama(message) -> Agent:
+    print(f"The Message: {message}")
+    _ = message
+    return ur
+
+
+# list of open source model supporting tools https://ollama.com/search?c=tools
+
+preben = Agent(
+    name="Preben",
+    instructions="You are Preben. Function operator",
+    functions=[transfer_to_lama],  # type: ignore
+    model="llama3.1",
 )
 
-if __name__ == "__main__":
+ur = Agent(
+    name="Ur",
+    instructions="Use get_spoken_time to answer what time it is in Danish.",
+    functions=[get_spoken_time], #type: ignore
+    model="qwen2.5",
+)
 
-    user_input = input("Human: ") 
-    print(agent.run(user_input))
+response = client.run(
+    agent=preben,
+    messages=[{"role": "user", "content": "Ask agent Ur what time it is?"}],
+)
+
+print(response.messages[-1]["content"])
   ```
-Example: 
-Prompt: `How many minutes are left before it is a quarter past twelve? Think step by step` 
+![image](https://github.com/user-attachments/assets/ee11ccf9-6dc4-4475-954f-7a509a3e13f3)
 
-![image](https://github.com/Proteusiq/saa/assets/14926709/5244c159-5fc3-4ac6-a9fa-829f9cf6ece6)
 
 </details>
 
