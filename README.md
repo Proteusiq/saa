@@ -262,6 +262,7 @@ Time to write tests. Duplicate English or Danish test_number and test_clock fold
 
 </details>
 
+---
 
 ## Supported Languages
 ![IMG_1009](https://github.com/Proteusiq/saa/assets/14926709/8562ac6e-eef6-4912-bfe8-b74141010f23)
