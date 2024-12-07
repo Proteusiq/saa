@@ -122,9 +122,9 @@ print(response.messages[-1]["content"])
   ```
 ![CleanShot 2024-11-12 at 11 54 51@2x](https://github.com/user-attachments/assets/a2f56b15-a488-410e-b8f6-08b7123a46a2)
 
-
-
 </details>
+
+---
 
 <details>
   <summary>Adding New Language 💾</summary>
