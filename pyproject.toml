@@ -10,11 +10,6 @@ requires-python = ">= 3.8"
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
-
-[tool.rye]
-managed = true
-dev-dependencies = ["ruff>=0.5.6", "pytest>=8.3.2", "pyright>=1.1.374"]
-
 [tool.ruff.lint]
 select = [
   "A", # warn about shadowing built-ins
@@ -27,14 +22,6 @@ select = [
 [tool.ruff.lint.per-file-ignores]
 "src/saa/*/*.py" = ["N805"] # ignored as first argument is not self
 
-
-[tool.rye.scripts]
-fmt = "rye fmt"
-lint = "rye lint --fix"
-check = "pyright"
-test = "rye test"
-all = { chain = ["fmt", "lint", "check", "test"] }
-
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
@@ -46,6 +33,9 @@ exclude = ["src/saa/luga", "src/saa/core/*"]
 "Bug Tracker" = "https://github.com/Proteusiq/saa/issues"
 
 [dependency-groups]
+dev = [
+"ruff>=0.5.6", "pytest>=8.3.2", "pyright>=1.1.374",
+]
 docs = [
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.5.44",
