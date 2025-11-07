@@ -1,6 +1,6 @@
 [project]
 name = "saa"
-version = "0.0.8"
+version = "0.0.9"
 description = "Converting time into natural language phrases"
 authors = [{ name = "Prayson W. Daniel", email = "praysonpi@gmail.com" }]
 dependencies = []
