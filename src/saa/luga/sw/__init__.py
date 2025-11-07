@@ -43,11 +43,24 @@ class Swahili(Luga):
         50: "hamsini",
     }
 
-    def time_logic(hour, minute) -> tuple[int, int, str, str]:
+    @staticmethod
+    def time_logic(hour: int, minute: int) -> tuple[int, int, str, str]:
+        """Convert hour and minute to Swahili time logic.
+
+        Args:
+            hour: Hour value (0-23).
+            minute: Minute value (0-59).
+
+        Returns:
+            Tuple of (hour, minute, is_to, time_indicator) for time expression.
+        """
         is_to = "to" if minute > 30 else "past"
         if is_to == "to":
             hour += 1
             minute = 60 - minute
+            # Handle hour wrapping past 23
+            if hour > 23:
+                hour = 0
         time_indicator = Swahili.day_divisions.get(hour)
 
         if 0 <= hour <= 6:
