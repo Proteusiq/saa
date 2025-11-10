@@ -13,7 +13,6 @@ from hypothesis import strategies as st
 from saa.core.plugins import supported_languages
 from saa.core.watch import Watch
 
-# Valid hour range is 0-23, minute range is 0-59
 valid_hours = st.integers(min_value=0, max_value=23)
 valid_minutes = st.integers(min_value=0, max_value=59)
 
@@ -32,7 +31,7 @@ def test_watch_accepts_all_valid_times(hour: int, minute: int) -> None:
         watch = Watch(language=language)
         test_time = time(hour=hour, minute=minute)
         result = watch(test_time)
-        # Property: Result must be a non-empty string
+        # property: Result must be a non-empty string
         assert isinstance(result, str), (
             f"Watch for {lang_code} at {test_time} returned {type(result)}"
         )
@@ -74,7 +73,7 @@ def test_watch_consistency(hour: int, minute: int) -> None:
         result1 = watch(test_time)
         result2 = watch(test_time)
         result3 = watch(test_time)
-        # Same time must always produce same output
+        # same time must always produce same output
         assert result1 == result2 == result3, (
             f"Inconsistent results for {lang_code} at {test_time}: "
             f"{result1} != {result2} != {result3}"
@@ -94,7 +93,7 @@ def test_watch_special_minutes_edge_cases(hour: int, minute: int) -> None:
         language = language_class()
         watch = Watch(language=language)
 
-        # Test special minutes if they occur
+        # test special minutes if they occur
         special_minutes = [0, 15, 30, 45]
         for special_minute in special_minutes:
             test_time = time(hour=hour, minute=special_minute)
@@ -115,10 +114,10 @@ def test_watch_hour_wrapping_equivalence(minute: int) -> None:
         language = language_class()
         watch = Watch(language=language)
 
-        # Test a few hour pairs that should have related expressions
+        # test a few hour pairs that should have related expressions
         result_1 = watch(time(hour=1, minute=minute))
         result_13 = watch(time(hour=13, minute=minute))
 
-        # Results should be strings (not necessarily equal due to AM/PM)
+        # results should be strings (not necessarily equal due to AM/PM)
         assert isinstance(result_1, str)
         assert isinstance(result_13, str)
