@@ -6,8 +6,8 @@ from saa.core.language import Luga
 @dataclass(init=False, eq=False, repr=False, frozen=False)
 class Deutsch(Luga):
     time = {
-        "to": "{minute} time_indicator vor {hour} Uhr",
-        "past": "{minute} time_indicator nach {hour} Uhr",
+        "to": "{minute} time_indicator vor {hour}",
+        "past": "{minute} time_indicator nach {hour}",
         0: "{hour} Uhr",
         15: "viertel nach {hour}",
         45: "viertel vor {hour}",
@@ -17,7 +17,7 @@ class Deutsch(Luga):
     connect_format = "{2}{1}{0}"
     numbers = {
         0: "null",
-        1: "ein",  # ein und zwanzig /  eine Minute / ein Uhr
+        1: "eins",
         2: "zwei",
         3: "drei",
         4: "vier",
@@ -55,10 +55,15 @@ class Deutsch(Luga):
 
     @staticmethod
     def post_logic(text: str) -> str:
-        if text in ("viertel nach ein", "viertel vor ein", "halb ein"):
-            text += "s"
+        # handle "null" hour (midnight) → "zwölf" (twelve)
+        text = text.replace("null", "zwölf")
 
-        text = text.replace("ein Minute", "eine Minute").replace("null", "zwölf")
+        # handle singular "Minute" with gender agreement
+        text = text.replace("eins Minute", "eine Minute")
+
+        # handle gender agreement for "ein" (masculine) before "Uhr"
+        # when "eins" appears before "Uhr", it should become "ein"
+        text = text.replace("eins Uhr", "ein Uhr")
 
         return text
 
