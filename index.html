@@ -1,0 +1,898 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="api_docs/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Saa</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#saa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Saa" class="md-header__button md-logo" aria-label="Saa" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Saa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/proteusiq/saa" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Saa" class="md-nav__button md-logo" aria-label="Saa" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Saa
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/proteusiq/saa" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Languages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending Language Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api_docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ChangeLogs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Languages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending Language Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="saa">Saa</h1>
+<blockquote>
+<p><em>Making Time Speak!</em> 🎙️
+Translating time into colloquial spoken expressions</p>
+</blockquote>
+<p><img alt="Saa OpenJourny" src="watch.png" /></p>
+<p><strong>Saa</strong> allows you to effortlessly translate time into colloquial spoken expressions. The word <code>saa</code> means <code>hour|time</code> in Swahili, and this package aims to humanify time expression across languages. It is build using pure Python standard libraries.</p>
+<pre><code class="language-python">from datetime import time
+from saa import Clock
+
+clock = Clock(&quot;en&quot;)
+clock(&quot;11:15&quot;) # 'quarter past eleven'
+
+ur = Clock(&quot;da&quot;)
+t = time(hour=7, minute=30)
+ur(t) # 'halvotte'
+
+muda = Clock(&quot;sw&quot;)
+muda(&quot;7:29&quot;) # 'saa moja na dakika ishirini na tisa asubuhi'
+
+clock = Clock(&quot;zh&quot;)
+clock(&quot;11:34&quot;) # '十一点三十四'
+
+clock = Clock(&quot;ru&quot;)
+clock(&quot;12:17&quot;) # 'двенадцать семнадцать'
+
+</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li>Convert time into spoken expressions in various languages.</li>
+<li>Easy-to-use API with a simple and intuitive design.</li>
+<li>Pure Python implementation with no external dependencies.</li>
+<li>Extensible architecture for adding support for additional languages using the plugin design pattern.</li>
+<li>Compatible with Python 3.6 and higher.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>You can install <strong>Saa</strong> using pip:</p>
+<pre><code class="language-shell">pip install -U saa
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<p>Here's a simple example to get you started:</p>
+<pre><code class="language-python">from saa import Clock
+
+# Create a Clock instance with the desired language (e.g., &quot;en&quot; for English)
+clock = Clock(&quot;en&quot;)
+
+# Translate time into a human-friendly spoken expression
+# supports also datetime and time. .e.g. time(hour=11, minute=45)
+spoken_time = clock(&quot;11:45&quot;)
+
+print(spoken_time)
+# Output: &quot;quarter to twelve&quot;
+</code></pre>
+<details>
+  <summary>Using Saa with Swarm 🦜🔗</summary>
+
+
+<pre><code class="language-python">from datetime import datetime
+from typing import Literal
+
+from openai import OpenAI
+from saa import Clock
+from swarm import Agent, Swarm
+
+ollama_client = OpenAI(base_url=&quot;http://localhost:11434/v1&quot;, api_key=&quot;NotNeeded&quot;,)
+
+client = Swarm(client=ollama_client)
+
+
+def get_spoken_time(language: Literal[&quot;en&quot;, &quot;da&quot;, &quot;sw&quot;,]) -&gt; str:
+    &quot;&quot;&quot;
+    Get spoken time:
+       language: iso code for a language
+    &quot;&quot;&quot;
+    clock = Clock(language)
+    now = datetime.now()
+    results = clock(now)
+    print(results)
+    return results
+
+
+def transfer_to_ur(message) -&gt; Agent:
+    print(f&quot;The Message: {message}&quot;)
+    _ = message
+    return ur
+
+
+# list of open source model supporting tools https://ollama.com/search?c=tools
+
+preben = Agent(
+    name=&quot;Preben&quot;,
+    instructions=&quot;You are Preben. Function operator&quot;,
+    functions=[transfer_to_ur],  # type: ignore
+    model=&quot;smollm2&quot;,
+)
+
+ur = Agent(
+    name=&quot;Ur&quot;,
+    instructions=&quot;Use get_spoken_time to answer what time it is a given language.&quot;,
+    functions=[get_spoken_time],  # type: ignore
+    model=&quot;qwen2.5&quot;,
+)
+
+response = client.run(
+    agent=preben,
+    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Ask what time it is in Danish?&quot;}],
+)
+
+print(response.messages[-1][&quot;content&quot;])
+
+  ```
+![CleanShot 2024-11-12 at 11 54 51@2x](https://github.com/user-attachments/assets/a2f56b15-a488-410e-b8f6-08b7123a46a2)
+
+&lt;/details&gt;
+
+---
+
+&lt;details&gt;
+  &lt;summary&gt;Adding New Language 💾&lt;/summary&gt;
+
+Using `Kiswahili` as an example of how to add a new language
+ 1. Create a folder under `saa/luga` directory, using the ISO 639-1 language code, with dunder init python file.
+ ```bash
+ mkdir saa/luga/sw &amp;&amp; touch saa/luga/sw/__init__.py
+ ```
+
+ 2. Contents of  `__init__.py` must have the following pattern
+ ```python
+from dataclasses import dataclass
+from saa.core.language import Luga
+
+
+@dataclass(init=False, eq=False, repr=False, frozen=False)
+class LanguageName(Luga):
+    ...
+
+class Language(LanguageName):
+    pass
+ ```
+
+So for `Swahili` the skeleton of `saa/luga/sw/__init__.py` would be:
+
+```python
+...
+
+@dataclass(init=False, eq=False, repr=False, frozen=False)
+class Swahili(Luga):
+    ...
+
+class Language(Swahili):
+    pass
+...
+</code></pre>
+
+
+Since we are implementing `Luga`, our tasks now are to implement both the properties (`time`, `number_connector`, `connect_format`) and static methods (`time_logic`, `post_logic`).
+
+In Swahili `class`, time is expressed in terms of hour first and then minutes. time_indicator is a placeholder for whatever changing logic, e.g. minute or minutes. For Swahili the logic is what part of the day it is, morning, noon, evenning or night.
+
+
+<pre><code class="language-python">time = {
+    &quot;past&quot;: &quot;saa {hour} na dakika {minute} time_indicator&quot;,
+    &quot;to&quot;: &quot;saa {hour} kasoro dakika {minute} time_indicator&quot;,
+    0: &quot;saa {hour} time_indicator&quot;,
+    15: &quot;saa {hour} na robo time_indicator&quot;,
+    45: &quot;saa {hour} kasorobo time_indicator&quot;,
+    30: &quot;saa {hour} na nusu time_indicator&quot;,
+}
+</code></pre>
+
+
+The numbers connector is Swahili is `na`, and the connection format is "{tens_digits @ index 0} {[number_connector] @ index 1} {ones_digits @ index 2}"
+
+
+<pre><code class="language-python">number_connector = &quot;na&quot;
+connect_format = &quot;{0} {1} {2}&quot;
+</code></pre>
+
+
+Given the implementations of Numbers converter, will include 11-19 even though we could deduced them as in 20-50s. The numbers are as following:
+
+
+<pre><code class="language-python">numbers = {
+    0: &quot;sifuri&quot;,
+    1: &quot;moja&quot;,
+    2: &quot;mbili&quot;,
+    3: &quot;tatu&quot;,
+    4: &quot;nne&quot;,
+    5: &quot;tano&quot;,
+    6: &quot;sita&quot;,
+    7: &quot;saba&quot;,
+    8: &quot;nane&quot;,
+    9: &quot;tisa&quot;,
+    10: &quot;kumi&quot;,
+    11: &quot;kumi na moja&quot;,
+    12: &quot;kumi na mbili&quot;,
+    13: &quot;kumi na tatu&quot;,
+    14: &quot;kumi na nne&quot;,
+    15: &quot;kumi na tano&quot;,
+    16: &quot;kumi na sita&quot;,
+    17: &quot;kumi na saba&quot;,
+    18: &quot;kumi na nane&quot;,
+    19: &quot;kumi na tisa&quot;,
+    20: &quot;ishirini&quot;,
+    30: &quot;thelathini&quot;,
+    40: &quot;arobaini&quot;,
+    50: &quot;hamsini&quot;,
+}
+</code></pre>
+
+
+The major task is on time logic. In Swahili, 7 AM is the first hour in the morning (asubuhi), while 7 PM is the first hour in the evenning (jioni). 6 AM is the 12th hour in the morning ( asubuhi), while 6 PM is the 12th hour in the evenning(jioni).
+
+
+<pre><code class="language-python">&quot;&quot;&quot;
+ 0 - 11 asubuhi 
+ 12 - 15 mchana 
+ 16 - 19 jioni
+ 20 - 23 usiku 
+&quot;&quot;&quot;
+
+day_divisions = {
+        0: &quot;asubuhi&quot;,
+        1: &quot;asubuhi&quot;,
+        2: &quot;asubuhi&quot;,
+        3: &quot;asubuhi&quot;,
+        4: &quot;asubuhi&quot;,
+        5: &quot;asubuhi&quot;,
+        6: &quot;asubuhi&quot;,
+        7: &quot;asubuhi&quot;,
+        8: &quot;asubuhi&quot;,
+        9: &quot;asubuhi&quot;,
+        10: &quot;asubuhi&quot;,
+        11: &quot;asubuhi&quot;,
+        12: &quot;mchana&quot;,
+        13: &quot;mchana&quot;,
+        14: &quot;mchana&quot;,
+        15: &quot;mchana&quot;,
+        16: &quot;jioni&quot;,
+        17: &quot;jioni&quot;,
+        18: &quot;jioni&quot;,
+        19: &quot;jioni&quot;,
+        20: &quot;usiku&quot;,
+        21: &quot;usiku&quot;,
+        22: &quot;usiku&quot;,
+        23: &quot;usiku&quot;,
+    }
+
+    @staticmethod
+    def post_logic(text: str) -&gt; str:
+        return text
+</code></pre>
+
+
+Time to write tests. Duplicate English or Danish test_number and test_clock folders, and replace them with new language. See Swahili tests. 
+
+</details>
+
+<hr />
+<h2 id="supported-languages">Supported Languages</h2>
+<p><img alt="IMG_1009" src="https://github.com/Proteusiq/saa/assets/14926709/8562ac6e-eef6-4912-bfe8-b74141010f23" /></p>
+<p><strong>Saa</strong> currently supports the following languages:</p>
+<ul>
+<li>English (<code>en</code>)</li>
+<li>Danish (<code>da</code>)</li>
+<li>Swahili (<code>sw</code>)</li>
+<li>Chinese (<code>zh</code>)</li>
+<li>Russian (<code>ru</code>)</li>
+<li>German (<code>de</code>) # review needed</li>
+</ul>
+<p>Coming ...
+- French (<code>fr</code>)
+- Spanish (<code>es</code>)
+- Italian (<code>it</code>)</p>
+<h2 id="extending-language-support">Extending Language Support</h2>
+<p>One of the key strengths of <strong>Saa</strong> is its extensible architecture, allowing you to easily add support for additional languages. To add a new language, follow these steps:</p>
+<ol>
+<li>Create a new directory under the <code>saa/luga</code> directory, using the ISO 639-1 language code as the filename (e.g., <code>fr</code> for French) and create a Python <code>__init__.py</code>.</li>
+<li>Implement the necessary functions in the new file to translate time into spoken expressions of the target language.</li>
+<li>Test the new language integration thoroughly to ensure accurate and reliable translations.</li>
+<li>Consider submitting a pull request to contribute your new language support to the main <strong>Saa</strong> repository.</li>
+</ol>
+<p>We welcome contributions from the community to expand language support and make <strong>Saa</strong> even more versatile!</p>
+<h2 id="contributing">Contributing</h2>
+<p>If you'd like to contribute to <strong>Saa</strong>, please follow the guidelines outlined in the <a href="https://github.com/your-username/saa/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> file. We appreciate your help in making this package better.</p>
+<h2 id="license">License</h2>
+<p><strong>Saa</strong> is released under the <a href="https://github.com/your-username/saa/blob/main/LICENSE">MIT License</a>. Feel free to use, modify, and distribute this package as per the terms of the license.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We would like to express our future gratitude to the developers of French, Spanish, German, and Italian language plugins for their valuable contributions to the <strong>Saa</strong> package. 🤣</p>
+<h2 id="contact">Contact</h2>
+<p>For any questions, suggestions, or feedback, please reach out to our team at praysonpi<at>gmail.com.</p>
+<p>Let <strong>Saa</strong> simplify time for you and enhance the way you communicate it across languages!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
