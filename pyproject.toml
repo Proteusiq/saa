@@ -2,7 +2,7 @@
 name = "saa"
 version = "0.0.9"
 description = "Converting time into natural language phrases"
-authors = [{ name = "Prayson W. Daniel", email = "praysonpi@gmail.com" }]
+authors = [{ name = "Prayson W. Daniel", email = "14926709+Proteusiq@users.noreply.github.com" }]
 dependencies = []
 requires-python = ">= 3.8"
 
