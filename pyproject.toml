@@ -41,3 +41,6 @@ docs = [
     "mkdocs-material>=9.5.44",
     "mkdocstrings[python]>=0.26.1",
 ]
+
+[tool.uv]
+exclude-newer = "7 days"
