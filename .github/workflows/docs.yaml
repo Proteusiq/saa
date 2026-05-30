@@ -1,8 +1,14 @@
 name: make_docs
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "src/saa/clock.py"
+      - ".github/workflows/docs.yaml"
 jobs:
   make-docs:
     name: python
