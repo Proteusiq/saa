@@ -68,4 +68,6 @@ docs = [
 ]
 
 [tool.uv]
-exclude-newer = "7 days"
+# exclude-newer expects an ISO datetime, not a relative duration like "7 days".
+# Leaving commented out until a real value is decided.
+# exclude-newer = "7 days"
