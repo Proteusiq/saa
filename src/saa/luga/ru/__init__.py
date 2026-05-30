@@ -113,10 +113,7 @@ class Russian(Luga):
             else:
                 time_indicator = "{minute}"
 
-            if hour == 1:
-                is_to = "one_zero"
-            else:
-                is_to = "to_zero"
+            is_to = "one_zero" if hour == 1 else "to_zero"
 
         return hour, minute, is_to, time_indicator
 

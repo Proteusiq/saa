@@ -1,12 +1,11 @@
 from datetime import datetime, time
 from functools import singledispatch
-from typing import Union
 
 from saa.core.plugins import supported_languages
 from saa.core.watch import Watch
 
 SUPPORTED_LANGUAGES = {luga for luga in supported_languages}
-TimeType = Union[str, time, datetime]
+TimeType = str | time | datetime
 
 
 @singledispatch

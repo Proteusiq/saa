@@ -27,17 +27,27 @@ Homepage = "https://github.com/Proteusiq/saa"
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+[tool.ruff]
+target-version = "py312"
+
 [tool.ruff.lint]
 select = [
-  "A", # warn about shadowing built-ins
-  "E", # style stuff, whitespaces
-  "F", # important pyflakes lints
-  "I", # import sorting
-  "N", # naming
+  "A",   # warn about shadowing built-ins
+  "B",   # flake8-bugbear
+  "E",   # style stuff, whitespaces
+  "F",   # important pyflakes lints
+  "I",   # import sorting
+  "N",   # naming
+  "RUF", # ruff-specific rules
+  "SIM", # flake8-simplify
+  "UP",  # pyupgrade
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"src/saa/*/*.py" = ["N805"] # ignored as first argument is not self
+# N805: first argument is not `self` by plugin design (luga plugins + Luga ABC)
+"src/saa/*/*.py" = ["N805"]
+# RUF012: class-level dicts are the plugin's data carriers, not instance state
+"src/saa/luga/*/*.py" = ["RUF012"]
 
 [tool.pyright]
 venvPath = "."
