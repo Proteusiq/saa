@@ -6,6 +6,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      # Force uv to ignore system Pythons preinstalled on the runner.
+      # Without this, `3` resolves to the runner's bundled 3.12 instead
+      # of uv's latest managed CPython.
+      UV_PYTHON_PREFERENCE: only-managed
     strategy:
       fail-fast: false
       matrix:
