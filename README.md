@@ -34,7 +34,7 @@ clock("12:17") # 'двенадцать семнадцать'
 - Easy-to-use API with a simple and intuitive design.
 - Pure Python implementation with no external dependencies.
 - Extensible architecture for adding support for additional languages using the plugin design pattern.
-- Compatible with Python 3.6 and higher.
+- Compatible with Python 3.12 and higher.
 
 ## Installation
 
