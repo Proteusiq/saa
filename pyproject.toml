@@ -1,10 +1,27 @@
 [project]
 name = "saa"
-version = "0.0.9"
+version = "0.1.0"
 description = "Converting time into natural language phrases"
+readme = "README.md"
+license = "MIT"
 authors = [{ name = "Prayson W. Daniel", email = "14926709+Proteusiq@users.noreply.github.com" }]
+requires-python = ">=3.12"
 dependencies = []
-requires-python = ">= 3.8"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Internationalization",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/Proteusiq/saa"
+"Bug Tracker" = "https://github.com/Proteusiq/saa/issues"
 
 [build-system]
 requires = ["pdm-backend"]
@@ -27,10 +44,6 @@ venvPath = "."
 venv = ".venv"
 include = ["src"]
 exclude = ["src/saa/luga", "src/saa/core/*"]
-
-[tool.urls]
-"Homepage" = "https://github.com/Proteusiq/saa"
-"Bug Tracker" = "https://github.com/Proteusiq/saa/issues"
 
 [dependency-groups]
 dev = [
