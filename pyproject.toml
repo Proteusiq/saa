@@ -50,15 +50,16 @@ select = [
 # RUF012: class-level dicts are the plugin's data carriers, not instance state
 "src/saa/luga/*/*.py" = ["RUF012"]
 
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
+[tool.ty.src]
 include = ["src"]
-exclude = ["src/saa/luga", "src/saa/core/*"]
+exclude = ["src/saa/luga", "src/saa/core"]
 
 [dependency-groups]
 dev = [
-"ruff>=0.5.6", "pytest>=8.3.2", "pyright>=1.1.374", "hypothesis>=6.0.0",
+    "hypothesis>=6.0.0",
+    "pytest>=8.3.2",
+    "ruff>=0.5.6",
+    "ty>=0.0.39",
 ]
 docs = [
     "mkdocs>=1.6.1",
