@@ -294,11 +294,11 @@ We welcome contributions from the community to expand language support and make 
 
 ## Contributing
 
-If you'd like to contribute to **Saa**, please follow the guidelines outlined in the [CONTRIBUTING.md](https://github.com/your-username/saa/blob/main/CONTRIBUTING.md) file. We appreciate your help in making this package better.
+If you'd like to contribute to **Saa**, please open an issue or pull request at <https://github.com/Proteusiq/saa>. We appreciate your help in making this package better.
 
 ## License
 
-**Saa** is released under the [MIT License](https://github.com/your-username/saa/blob/main/LICENSE). Feel free to use, modify, and distribute this package as per the terms of the license.
+**Saa** is released under the [MIT License](https://github.com/Proteusiq/saa/blob/main/LICENSE). Feel free to use, modify, and distribute this package as per the terms of the license.
 
 ## Acknowledgments
 
@@ -306,6 +306,6 @@ We would like to express our future gratitude to the developers of French, Spani
 
 ## Contact
 
-For any questions, suggestions, or feedback, please reach out to our team at praysonpi<at>gmail.com.
+For any questions, suggestions, or feedback, please reach out to our team at 14926709+Proteusiq@users.noreply.github.com.
 
 Let **Saa** simplify time for you and enhance the way you communicate it across languages!
