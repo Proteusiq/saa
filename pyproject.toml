@@ -67,8 +67,3 @@ docs = [
     "mkdocs-material>=9.5.44",
     "mkdocstrings[python]>=0.26.1",
 ]
-
-[tool.uv]
-# exclude-newer expects an ISO datetime, not a relative duration like "7 days".
-# Leaving commented out until a real value is decided.
-# exclude-newer = "7 days"
