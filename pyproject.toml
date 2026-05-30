@@ -49,6 +49,8 @@ select = [
 "src/saa/*/*.py" = ["N805"]
 # RUF012: class-level dicts are the plugin's data carriers, not instance state
 "src/saa/luga/*/*.py" = ["RUF012"]
+# A005: deliberate shadowing of stdlib `numbers`; module name is part of the API
+"src/saa/core/numbers.py" = ["A005"]
 
 [tool.ty.src]
 include = ["src"]
