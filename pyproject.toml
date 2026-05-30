@@ -54,7 +54,6 @@ select = [
 
 [tool.ty.src]
 include = ["src"]
-exclude = ["src/saa/luga", "src/saa/core"]
 
 [dependency-groups]
 dev = [

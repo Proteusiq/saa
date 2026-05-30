@@ -61,7 +61,7 @@ class Swahili(Luga):
             # Handle hour wrapping past 23
             if hour > 23:
                 hour = 0
-        time_indicator = Swahili.day_divisions.get(hour)
+        time_indicator = Swahili.day_divisions[hour]
 
         if 0 <= hour <= 6:
             hour += 6
